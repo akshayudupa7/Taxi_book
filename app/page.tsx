@@ -15,7 +15,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
-    <main className='overflow-hidden'>
+    <main className='overflow-hidden bg-black'>
       <Hero />
 
       <div className='mt-12 padding-x padding-y max-width' id='discover'>
@@ -27,7 +27,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className='home__filters'>
           <SearchBar />
 
-          <div className='home__filter-container'>
+          <div className='home__filter-container '>
             <CustomFilter title='fuel' options={fuels} />
             <CustomFilter title='year' options={yearsOfProduction} />
           </div>
@@ -35,7 +35,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
         {!isDataEmpty ? (
           <section>
-            <div className='home__cars-wrapper'>
+            <div className='home__cars-wrapper '>
               {allCars?.map((car) => (
                 <CarCard car={car} />
               ))}
